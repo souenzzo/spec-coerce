@@ -76,7 +76,7 @@
 #?(:clj
    (defn- flexible-parse-inst [x]
      (try
-       (clojure.instant/read-instant-timestamp x)
+       (clojure.instant/read-instant-date x)
        (catch Exception _
          (let [zone (ZoneId/of (.getID (TimeZone/getDefault)))]
            (or (some #(try
